@@ -148,6 +148,8 @@ describe Owner do
           :fishes => [nemo],
           :cats => [Cat.new("Mittens"), tabby]
         }
+        binding.pry
+        puts owner.pets # added by me
         owner.sell_pets
         owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) }
         [fido, tabby, nemo].each { |o| expect(o.mood).to eq("nervous") }
