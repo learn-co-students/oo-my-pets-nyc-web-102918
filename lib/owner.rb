@@ -46,4 +46,29 @@ class Owner
       dog.mood = "happy"
     end
   end
+
+  def play_with_cats
+    self.pets[:cats].map do |cat|
+      cat.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    self.pets[:fishes].map do |fish|
+      fish.mood = "happy"
+    end
+  end
+
+  def sell_pets
+    self.pets.each do |type, pets|
+      pets.each do |each_pet|
+        each_pet.mood = "nervous"
+      end
+      pets.clear
+    end
+  end
+
+  def list_pets
+    return "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+  end
 end
