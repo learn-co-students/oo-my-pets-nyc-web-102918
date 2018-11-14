@@ -24,6 +24,7 @@ class Owner
 
   def sell_pets
     pets.each{|type,list|list.each{|pet|pet.mood="nervous"}}
+    @pets=[]
     #pets={fishes: [], dogs: [],cats: []}
   end
 
